@@ -1,0 +1,219 @@
+.landing-page {
+    background: linear-gradient(to top, #3A2D3D, #100F0F);
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem 0;
+    list-style: none;
+    gap: 4rem;
+    margin: 0;
+    z-index: 2;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+    color: #a40efc;
+}
+
+.content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    margin-top: 2rem;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 12rem;
+    color: white;
+    font-weight: 900;
+    margin: 0;
+    line-height: 1;
+    z-index: 2;
+    text-align: center;
+}
+
+.description-box {
+    position: absolute;
+    width: 280px;
+    padding: 1.2rem;
+    background: rgba(102, 51, 153, 0.15);
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
+    color: white;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.description-box.left {
+    left: 5%;
+    top: 35%;
+    text-align: left;
+}
+
+.description-box.right {
+    right: 5%;
+    top: 55%;
+    text-align: right;
+}
+
+.download-btn {
+    position: fixed; /* Changed from absolute to fixed */
+    left: 24px;
+    bottom: 24px;
+    background-color: #a40efc;
+    color: white;
+    padding: 0.8rem 2.5rem;
+    border: none;
+    border-radius: 9999px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 10; /* Increased z-index to ensure it stays on top */
+    letter-spacing: 0.05em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.download-btn:hover {
+    background-color: #8e09d6;
+    transform: scale(1.05);
+}
+
+.profile-image {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 70vh;
+    width: auto; /* Changed from 40vw to auto to maintain aspect ratio */
+    z-index: 3;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-image img {
+    height: 100%;
+    width: auto; /* Changed from 100% to auto to maintain aspect ratio */
+    object-fit: contain; /* Changed from cover to contain */
+    filter: drop-shadow(-8px -6px 7px rgba(0, 0, 0, 0.5));
+    border-radius: inherit;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 6rem;
+    }
+    
+    .description-box {
+        width: 240px;
+        font-size: 0.9rem;
+    }
+    
+    .description-box.left {
+        left: 10%;
+        top: 30%;
+    }
+    
+    .description-box.right {
+        right: 10%;
+        top: 50%;
+    }
+    
+    .navbar {
+        gap: 3rem;
+    }
+
+    .profile-image {
+        height: 60vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        margin-top: 1rem;
+    }
+    
+    h1 {
+        font-size: 4.5rem;
+    }
+    
+    .description-box {
+        width: 200px;
+        font-size: 0.85rem;
+        padding: 1rem;
+    }
+    
+    .description-box.left,
+    .description-box.right {
+        position: static;
+        margin: 1rem auto;
+        text-align: center;
+    }
+    
+    .profile-image {
+        height: 50vh;
+        /* position: relative; */
+        margin-top: 2rem;
+    }
+    
+    .navbar {
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    .download-btn {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 16px;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 3.5rem;
+    }
+    
+    .description-box {
+        width: 180px;
+        font-size: 0.75rem;
+    }
+    
+    .download-btn {
+        font-size: 0.85rem;
+        padding: 0.7rem 2rem;
+    }
+    
+    .profile-image {
+        height: 40vh;
+    }
+    
+    .navbar a {
+        font-size: 1rem;
+    }
+}

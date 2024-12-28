@@ -1,0 +1,31 @@
+.project-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 40vh;
+    width: 30vh;
+    background-color: #C79FFF;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.project-card .project-icon{
+    background-color: #D9D9D9;
+    height: 12vh;
+    width: 12vh;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.project-icon i{
+    font-size: 2rem;
+}
+
+.project-card .project-name{
+    color: aliceblue;
+    font-weight: 700;
+}

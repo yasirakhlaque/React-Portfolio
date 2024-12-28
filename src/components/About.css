@@ -1,0 +1,111 @@
+.about {
+    height: auto; /* Allow dynamic height for smaller screens */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6vh; /* Reduce gap for better alignment */
+    padding: 5vh 5vw; /* Add responsive padding */
+    background: linear-gradient(to top, #0C0B0B, #3A2D3D);
+    color: white;
+    flex-wrap: wrap; /* Enable wrapping for smaller screens */
+    text-align: center; /* Center align text for smaller screens */
+    box-sizing: border-box; /* Ensure padding is included in dimensions */
+}
+
+.about-image {
+    height: 60vh;
+    width: 50vh;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.about-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.about .about-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3vh;
+    width: 55vw;
+}
+
+.about-content h2, 
+.about-content h3 {
+    margin: 0;
+}
+
+.about-content .about-para {
+    line-height: 1.6; /* Improve readability */
+}
+
+.about-content .about-btn {
+    width: 25vh;
+    height: 6vh;
+    border-radius: 25px;
+    border: none;
+    background-color: #A40EFC;
+    color: white;
+    font-weight: 700;
+    transition: all 0.3s ease-in;
+}
+
+.about-content .about-btn:hover {
+    background: transparent;
+    border: 2px solid #A40EFC;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column; /* Stack content vertically */
+        gap: 5vh; /* Reduce gap */
+        text-align: center;
+    }
+
+    .about-image {
+        height: 40vh; /* Adjust image size */
+        width: 40vh;
+    }
+
+    .about .about-content {
+        width: 80%; /* Reduce width */
+    }
+
+    .about-content .about-btn {
+        width: 20vh;
+        height: 5vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .about {
+        padding: 3vh 2vw; /* Compact padding */
+    }
+
+    .about-image {
+        height: 35vh; /* Adjust further for smaller screens */
+        width: 35vh;
+    }
+
+    .about-content h2 {
+        font-size: 1.8rem; /* Smaller heading size */
+    }
+
+    .about-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .about-content .about-para {
+        font-size: 0.9rem; /* Adjust paragraph font size */
+    }
+
+    .about-content .about-btn {
+        width: 18vh;
+        height: 4.5vh;
+    }
+}

@@ -1,0 +1,48 @@
+.project {
+    height: auto; /* Allow dynamic height for content */
+    width: 100%;
+    background: linear-gradient(to top, #281C32, #100F0F);
+    padding: 4vh 2rem; /* Add padding for smaller screens */
+    box-sizing: border-box;
+    text-align: center; /* Center align text for better readability */
+}
+
+.project-h1 {
+    font-size: 4rem;
+    margin-bottom: 2vh;
+    color: white;
+}
+
+.project-cards {
+    margin-top: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5vh;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .project-h1 {
+        font-size: 3rem; /* Reduce heading size for smaller screens */
+    }
+
+    .project-cards {
+        gap: 3vh; /* Reduce gap between project cards */
+    }
+}
+
+@media (max-width: 480px) {
+    .project-h1 {
+        font-size: 2rem; /* Further reduce heading size */
+    }
+
+    .project-cards {
+        gap: 2vh; /* Minimize gap for smaller screens */
+    }
+
+    .project {
+        padding: 2vh 1rem; /* Compact padding for very small screens */
+    }
+}

@@ -1,0 +1,58 @@
+.skill {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(to top, #292828, #281C32);
+    padding: 2rem; /* Add padding for smaller screens */
+    box-sizing: border-box;
+}
+
+.skill-h1 {
+    color: black;
+    font-size: 3rem;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.skill-h1 .skillset {
+    color: #F32CE6;
+}
+
+.skill-cards {
+    margin-top: 2vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5vh;
+    padding: 1rem; /* Add padding for better spacing */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .skill-h1 {
+        font-size: 2rem; /* Adjust heading size */
+    }
+
+    .skill-cards {
+        gap: 3vh; /* Reduce gap between cards */
+    }
+
+    .skill {
+        height: auto; /* Allow content to adjust dynamically */
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .skill-h1 {
+        font-size: 1.5rem; /* Further reduce heading size */
+    }
+
+    .skill-cards {
+        gap: 2vh; /* Further reduce gap */
+    }
+}
