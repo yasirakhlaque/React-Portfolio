@@ -1,6 +1,6 @@
 import './Skills.css';
 
-import SkillCard from "./skillCard";
+import SkillCard from "./SkillCard";
 
 export default function Skills() {
     let icons = [
