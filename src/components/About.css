@@ -1,17 +1,20 @@
 .about {
-    height: auto; /* Allow dynamic height for smaller screens */
+    height: auto; 
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 6vh; /* Reduce gap for better alignment */
-    padding: 5vh 5vw; /* Add responsive padding */
+    gap: 6vh; 
+    padding: 5vh 5vw;
     background: linear-gradient(to top, #0C0B0B, #3A2D3D);
     color: white;
-    flex-wrap: wrap; /* Enable wrapping for smaller screens */
-    text-align: center; /* Center align text for smaller screens */
-    box-sizing: border-box; /* Ensure padding is included in dimensions */
+    flex-wrap: wrap; 
+    text-align: center; 
+    box-sizing: border-box; 
 }
+
+
+
 
 .about-image {
     height: 60vh;
@@ -109,3 +112,19 @@
         height: 4.5vh;
     }
 }
+
+
+
+.about.light {
+    background: linear-gradient(to top, #57575c, #e0cdcd);
+    color: #000000;
+  }
+
+  .about.light .about-btn{
+    background-color: #1a0e21;
+  }
+
+  .about.light .about-btn:hover{
+    background: transparent;
+    border: 2px solid #1a0e21;
+  }

@@ -46,3 +46,12 @@
         padding: 2vh 1rem; /* Compact padding for very small screens */
     }
 }
+
+.project.light{
+    background: linear-gradient(to top, #e0cdcd, #57575c);
+    color: black;
+}
+
+.project.light .project-h1{
+    color: #100F0F;
+}

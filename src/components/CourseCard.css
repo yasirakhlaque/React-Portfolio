@@ -19,3 +19,9 @@
     color: white;
     box-shadow: 6px 6px 8px purple;
 }
+
+.course-box.light{
+    color: rgb(31, 30, 30);
+    border: 3px solid black;
+    box-shadow: 6px 6px 8px rgb(27, 27, 27);
+}

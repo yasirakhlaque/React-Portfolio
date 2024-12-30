@@ -2,10 +2,12 @@
     width: 40vh;
     height: 30vh;
     border-radius: 12px;
-    background: linear-gradient(90deg, #591C8E, #D938F2); /* Define the gradient */
+    background: linear-gradient(90deg, #591C8E, #D938F2);
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
 }
 
 .skill-card .icon {
@@ -20,4 +22,8 @@
 .skill-card .icon i {
     color: white;
     font-size: 5rem;
+}
+
+.skill-card.light {
+    background: linear-gradient(90deg, #090809, #524e53);
 }

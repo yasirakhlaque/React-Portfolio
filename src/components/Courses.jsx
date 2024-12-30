@@ -1,8 +1,10 @@
 import CourseCard from './CourseCard';
 import './Courses.css';
+import { useContext } from 'react';
+import { ThemeContext } from '../App';
 
 export default function Courses() {
-
+    const { theme, toggleTheme } = useContext(ThemeContext);
     let courses = [
         {
             platform: "GREAT LEARNING",
@@ -28,7 +30,7 @@ export default function Courses() {
 
     return (
         <>
-            <div className="course">
+            <div className={`course ${theme}`}>
                 <h1 className="course-h1">COURSES AND <span className='skillset'>CERTIFICATIONS</span></h1>
                 <div className="course-cards">
                     {

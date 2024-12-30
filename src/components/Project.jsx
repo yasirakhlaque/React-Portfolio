@@ -1,7 +1,10 @@
 import './Project.css'
 import ProjectCard from './ProjectCard'
+import { useContext } from 'react';
+import { ThemeContext } from '../App';
 
 export default function Project() {
+    const { theme, toggleTheme } = useContext(ThemeContext);
 
     let project = [
         {
@@ -16,7 +19,7 @@ export default function Project() {
 
     return (
         <>
-            <div className="project">
+            <div className={`project ${theme}`}>
                 <h1 className="project-h1">PROJECTS</h1>
                 <div className="project-cards">
                     {

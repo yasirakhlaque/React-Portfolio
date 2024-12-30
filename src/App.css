@@ -3,3 +3,38 @@
 body{
   font-family: 'poppins',sans-serif;
 }
+/* App container styles */
+.app {
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Dark theme styles */
+.app.dark {
+  background: #121212; /* Dark background */
+  color: #ffffff; /* Light text */
+}
+
+/* Light theme styles */
+.app.light {
+  background: linear-gradient(to bottom, #f5f5f5, #ffffff); /* Grey to white gradient */
+  color: #333333; /* Dark text */
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px 15px;
+  background: #4c474d;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  z-index: 999;
+}
+
+.theme-toggle:hover {
+  background: #292424;
+}

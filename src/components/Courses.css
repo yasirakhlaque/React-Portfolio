@@ -55,3 +55,16 @@
         padding: 3vh 2vw; /* Compact padding for mobile */
     }
 }
+
+.course.light{
+    background: linear-gradient(to top, #e0cdcd, #57575c);
+    color: black;
+}
+
+.course.light .skillset{
+    color: #39393a;
+}
+
+.course.light .course-h1{
+    color: black;
+}

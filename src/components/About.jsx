@@ -1,9 +1,13 @@
 import './About.css'
+import { useContext } from 'react';
+import { ThemeContext } from '../App';
 
 export default function About(){
+
+    const { theme, toggleTheme } = useContext(ThemeContext);
     return (
         <>
-        <div className="about">
+        <div className={`about ${theme}`}>
             <div className="about-image" data-aos="zoom-in-down">
                 <img src="Images/yasir2.JPG" alt="" />
             </div>

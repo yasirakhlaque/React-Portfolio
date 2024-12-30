@@ -56,3 +56,11 @@
         gap: 2vh; /* Further reduce gap */
     }
 }
+
+.skill.light{
+    background: linear-gradient(to top, #57575c, #e0cdcd);
+}
+
+.skill.light .skillset{
+    color: #57575c;
+}

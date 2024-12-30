@@ -217,3 +217,26 @@ h1 {
         font-size: 1rem;
     }
 }
+  
+  .landing-page.light {
+    background: linear-gradient(to top, #e0cdcd, #57575c);
+    color: #000000;
+  }
+
+  .landing-page.light .navbar a{
+    color: black;
+  }
+
+  .landing-page.light .description-box{
+    font-weight: 600;
+    background-color: #fff;
+    color: black;
+  }
+
+  .landing-page.light h1{
+    color: #000000;
+  }
+
+  .landing-page.light .download-btn{
+    background-color: #1a1a1a;
+  }
