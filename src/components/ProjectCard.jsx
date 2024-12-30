@@ -1,8 +1,9 @@
 import './ProjectCard.css'
 import { useContext } from 'react';
 import { ThemeContext } from '../App';
+import About from './About';
 
-export default function ProjectCard({ icon, name }) {
+export default function ProjectCard({ icon, name, about }) {
     const { theme, toggleTheme } = useContext(ThemeContext);
     return (
         <>
@@ -10,6 +11,7 @@ export default function ProjectCard({ icon, name }) {
                 <div className="project-abt">
                     <div className="project-icon"><i className={`${icon}`}></i></div>
                     <div className="project-name">{name}</div>
+                    <p className='project-card-para'>{about}</p>
                 </div>
                 <div className="options">
                     <div className="source"><button>SOURCE<i className="fa-regular fa-folder-open"></i></button></div>

@@ -9,11 +9,13 @@ export default function Project() {
     let project = [
         {
             icon: "fa-solid fa-calendar",
-            name: "Event Managing Calendar"
+            name: "Event Managing Calendar",
+            about:"A place where you can list your upcoming events"
         },
         {
             icon: "fa-regular fa-comment",
-            name: "Doraemon Bot"
+            name: "Doraemon Bot",
+            about:"A bot which chats like doraemon"
         },
     ]
 
@@ -24,7 +26,7 @@ export default function Project() {
                 <div className="project-cards">
                     {
                         project.map((project, index) => (
-                            <ProjectCard key={index} icon={project.icon} name={project.name}/>
+                            <ProjectCard key={index} icon={project.icon} name={project.name} about={project.about}/>
                         ))
                     }
                 </div>

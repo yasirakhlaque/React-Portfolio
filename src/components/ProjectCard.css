@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 40vh;
+    height: 45vh;
     width: 34vh;
     background-color: #C79FFF;
     border-radius: 12px;
@@ -20,7 +20,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: #595454;
 }
 
 .project-abt {
@@ -82,4 +82,8 @@
 .project-link button {
     background-color: #fff;
     color: black;
+}
+
+.project-card.light .project-card-para{
+    color: white;
 }
