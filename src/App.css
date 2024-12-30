@@ -37,6 +37,7 @@ body{
 
 .theme-toggle:hover {
   background: #292424;
+  scale: 1.05;
 }
 
 @media (max-width:660px) {

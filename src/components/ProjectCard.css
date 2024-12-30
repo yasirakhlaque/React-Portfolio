@@ -30,3 +30,10 @@
     font-weight: 700;
 }
 
+.project-card.light{
+    background-color: #3d3d3d;
+}
+
+.project-card.light i{
+    color: #000;
+}
