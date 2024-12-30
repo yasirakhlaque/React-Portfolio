@@ -1,0 +1,124 @@
+.contact{
+    background: linear-gradient(to top,#292828,#3A1336 );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 90vh;
+}
+.contact h1{
+    font-size: 3rem;
+}
+
+.contact form{
+    margin-top: 3vh;
+    background-color: #1f0820;
+    min-height: 70vh;
+    width: 55vw;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3vh;
+}
+
+form input{
+    height: 6vh;
+    border: none;
+    border-radius: 4px;
+    /* width: 70vh; */
+}
+
+form .input-name,
+.input-email,
+.input-message{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+    width: 90%;
+}
+
+.input-message textarea{
+    min-height: 20vh;
+}
+
+label{
+    display: block;
+}
+
+form button{
+    background-color: purple;
+    color: white;
+    width: 90%;
+    height: 5vh;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+form button:hover{
+    background-color: #581872;
+}
+
+.social{
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4vh;
+}
+
+.social i{
+    font-size: 1.5rem;
+}
+
+.social i{
+    transition: all .3s ease-in;
+}
+
+.social .fa-github:hover,
+.fa-linkedin:hover,
+.fa-x-twitter:hover{
+    rotate: 13deg;
+}
+
+.social .fa-linkedin:hover{
+    color: rgb(0, 47, 255);
+}
+
+.social .fa-x-twitter:hover{
+    color: black;
+}
+
+.social .fa-github:hover{
+    color: black;
+}
+
+@media (max-width:768px) {
+    .contact h1{
+        font-size: 2.5rem;
+    }
+   .contact form{
+        width: 90vw;
+    }
+}
+
+.contact.light{
+    background: linear-gradient(to top,#57575c,  #e0cdcd );
+}
+
+.contact.light form{
+    background-color: #decedf;
+}
+
+.contact.light form button{
+    background-color: #6f7478;
+    color: rgb(219, 219, 219);
+}
+
+.contact.light form button:hover{
+    background-color: #4e4d4d;
+}

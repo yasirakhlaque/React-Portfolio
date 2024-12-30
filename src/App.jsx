@@ -7,6 +7,7 @@ import Project from './components/Project';
 import Skills from './components/Skills';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Contact from './components/Contact';
 
 // Create Theme Context
 export const ThemeContext = createContext();
@@ -43,6 +44,9 @@ const App = () => {
         </div>
         <div id="courses">
           <Courses />
+        </div>
+        <div id="contact">
+          <Contact/>
         </div>
       </div>
     </ThemeContext.Provider>

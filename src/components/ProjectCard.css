@@ -1,16 +1,18 @@
-.project-card{
+.project-card {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 40vh;
-    width: 30vh;
+    width: 34vh;
     background-color: #C79FFF;
     border-radius: 12px;
     text-align: center;
+    padding: 10px;
+    
 }
 
-.project-card .project-icon{
+.project-card .project-icon {
     background-color: #D9D9D9;
     height: 12vh;
     width: 12vh;
@@ -21,19 +23,63 @@
     color: white;
 }
 
-.project-icon i{
+.project-abt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 35vh;
+}
+
+.project-icon i {
     font-size: 2rem;
 }
 
-.project-card .project-name{
+.project-card .project-name {
     color: aliceblue;
     font-weight: 700;
 }
 
-.project-card.light{
+.options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3vh;
+}
+
+.options .source button,
+.project-link button {
+    border: none;
+    background-color: #8a3196;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    width: 14vh;
+    height: 5vh;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vh;
+    cursor: pointer;
+    transition: scale .1s ease;
+}
+
+.options .source button:hover,
+.project-link button:hover
+{
+    scale: 1.05;
+}
+
+.project-card.light {
     background-color: #3d3d3d;
 }
 
-.project-card.light i{
+.project-card.light i {
     color: #000;
+}
+
+.project-card.light .options .source button,
+.project-link button {
+    background-color: #fff;
+    color: black;
 }
