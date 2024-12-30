@@ -32,7 +32,7 @@ const LandingPage = () => {
           </p>
         </div>
 
-        <button className="download-btn">DOWNLOAD RESUME</button>
+        <a href="/resume.pdf" download="resume.pdf"><button className="download-btn">DOWNLOAD RESUME</button></a>
 
         <div className="profile-image">
           <img src="Images/yasir1.png" alt="Profile" />
