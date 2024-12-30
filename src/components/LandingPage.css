@@ -95,6 +95,10 @@ h1 {
     z-index: 10; /* Increased z-index to ensure it stays on top */
     letter-spacing: 0.05em;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vh;
 }
 
 .download-btn:hover {
