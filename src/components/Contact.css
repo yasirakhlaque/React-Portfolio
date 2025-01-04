@@ -72,6 +72,7 @@ form button:hover{
 }
 
 .social i{
+    color: grey;
     font-size: 1.5rem;
 }
 
@@ -82,6 +83,7 @@ form button:hover{
 .social .fa-github:hover,
 .fa-linkedin:hover,
 .fa-x-twitter:hover{
+    scale: 1.2;
     rotate: 13deg;
 }
 
