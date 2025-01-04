@@ -11,6 +11,9 @@
     padding: 10px;
     
 }
+a{
+    all: unset;
+}
 
 .project-card .project-icon {
     background-color: #D9D9D9;

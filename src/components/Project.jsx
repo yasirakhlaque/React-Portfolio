@@ -15,7 +15,8 @@ export default function Project() {
         {
             icon: "fa-regular fa-comment",
             name: "Doraemon Bot",
-            about:"A bot which chats like doraemon"
+            about:"A bot which chats like doraemon",
+            link:"https://doraemon-bot.vercel.app/"
         },
     ]
 
@@ -26,7 +27,7 @@ export default function Project() {
                 <div className="project-cards">
                     {
                         project.map((project, index) => (
-                            <ProjectCard key={index} icon={project.icon} name={project.name} about={project.about}/>
+                            <ProjectCard key={index} icon={project.icon} name={project.name} about={project.about} link={project.link}/>
                         ))
                     }
                 </div>

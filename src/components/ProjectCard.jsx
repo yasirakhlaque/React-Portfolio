@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { ThemeContext } from '../App';
 import About from './About';
 
-export default function ProjectCard({ icon, name, about }) {
+export default function ProjectCard({ icon, name, about, link }) {
     const { theme, toggleTheme } = useContext(ThemeContext);
     return (
         <>
@@ -14,8 +14,7 @@ export default function ProjectCard({ icon, name, about }) {
                     <p className='project-card-para'>{about}</p>
                 </div>
                 <div className="options">
-                    <div className="source"><button>SOURCE<i className="fa-regular fa-folder-open"></i></button></div>
-                    <div className="project-link"><button>LINK<i className="fa-solid fa-arrow-up-right-from-square"></i></button></div>
+                    <div className="project-link"><a href={`${link}`}><button>LINK<i className="fa-solid fa-arrow-up-right-from-square"></i></button></a></div>
                 </div>
             </div>
         </>
