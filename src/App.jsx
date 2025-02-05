@@ -22,6 +22,13 @@ const App = () => {
 
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
+
+    const icon = document.querySelector('.theme-toggle i'); // Select the icon
+    if (icon) {
+      icon.style.animation = 'none';
+      icon.offsetHeight; // Trigger reflow
+      icon.style.animation = 'roll 0.5s ease 1';
+    }
   };
 
   return (

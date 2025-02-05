@@ -45,3 +45,17 @@ body{
     top: 70px;
   }
 }
+
+.theme-toggle {
+  /* ... other styles, but REMOVE the transition from here if you only want the icon to animate */
+}
+
+.theme-toggle i { /* Target the icon directly */
+  animation: none; /* Initially no animation */
+  transition: all .3s; /* Add transition to icon */
+}
+
+@keyframes roll {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
