@@ -20,13 +20,13 @@ const LandingPage = () => {
       <div className="content">
         <h1 data-aos="zoom-out">WEB DEV</h1>
 
-        <div className="description-box left" data-aos="zoom-out">
+        <div className="description-box left abt-para" data-aos="zoom-out">
           <p>
             Passionate web developer who loves to explore new technologies in web development and the new AI tools
           </p>
         </div>
 
-        <div className="description-box right" data-aos="zoom-out">
+        <div className="description-box right abt-para" data-aos="zoom-out">
           <p>
             Passionate web developer who loves to explore new technologies in web development and the new AI tools
           </p>

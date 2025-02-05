@@ -244,3 +244,14 @@ h1 {
   .landing-page.light .download-btn{
     background-color: #1a1a1a;
   }
+
+  .abt-para{
+    animation: float 1s ease  infinite alternate-reverse;
+  }
+
+  @keyframes float {
+    from{}
+    to{
+        transform: translateY(-10px);
+    }
+  }
