@@ -14,7 +14,7 @@ export default function About(){
             <div className="about-content" data-aos="zoom-in-left">
                 <h2>ABOUT ME</h2>
                 <h3>DEVELOPER</h3>
-                <p className='about-para'>Student at Dr. Bhimrao Ambedkar University pursuing Bachelors of Engineering from Computer Science . Loves website development and explore new AI tools that helps in web development and are time saving.</p>
+                <p className='about-para'>Computer Science student at Dr. Bhimrao Ambedkar University (Agra) on a mission to make web development faster and smarter.  My weapon of choice?  AI-powered tools and a passion for open source.  When I'm not coding, I'm probably exploring the latest tech or dreaming up new web experiences.</p>
                 <button className="about-btn">
                     Let's Talk
                 </button>

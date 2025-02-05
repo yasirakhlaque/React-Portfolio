@@ -29,6 +29,13 @@
     border-radius: 10px;
 }
 
+.about-image img:hover{
+    transform: scale(1.02);
+    transition: all 0.3s ease-in-out;
+}
+
+
+
 .about .about-content {
     display: flex;
     justify-content: center;
