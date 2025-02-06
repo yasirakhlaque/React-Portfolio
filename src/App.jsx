@@ -8,6 +8,7 @@ import Skills from './components/Skills';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 // Create Theme Context
 export const ThemeContext = createContext();
@@ -56,6 +57,7 @@ const App = () => {
           <Contact/>
         </div>
       </div>
+      <Footer/>
     </ThemeContext.Provider>
   );
 };
