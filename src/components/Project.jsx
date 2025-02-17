@@ -18,6 +18,12 @@ export default function Project() {
             about:"A bot which chats like doraemon",
             link:"https://doraemon-bot.vercel.app/"
         },
+        {
+            icon: "fa-solid fa-basket-shopping",
+            name: "React Ecommerce",
+            about:"A E-Commerce Website Made using react js",
+            link:"https://react-e-commerce-kappa-six.vercel.app/"
+        },
     ]
 
     return (
