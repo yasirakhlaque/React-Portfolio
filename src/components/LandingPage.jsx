@@ -1,4 +1,4 @@
-import './LandingPage.css';
+import '../styles/LandingPage.css';
 import { useContext } from 'react';
 import { ThemeContext } from '../App';
 

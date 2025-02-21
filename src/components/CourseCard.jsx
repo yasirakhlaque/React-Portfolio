@@ -1,4 +1,4 @@
-import './CourseCard.css'
+import '../styles/CourseCard.css'
 import { useContext } from 'react';
 import { ThemeContext } from '../App';
 

@@ -1,4 +1,4 @@
-import './SkillCard.css';
+import '../styles/SkillCard.css';
 import { useContext } from 'react';
 import { ThemeContext } from '../App';
 

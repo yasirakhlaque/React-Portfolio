@@ -1,5 +1,6 @@
 .about {
     height: auto; 
+    min-height: 90vh;
     width: 100%;
     display: flex;
     justify-content: center;

@@ -1,4 +1,4 @@
-import "./ProjectCard.css";
+import "../styles/ProjectCard.css";
 import { useContext } from "react";
 import { ThemeContext } from "../App";
 

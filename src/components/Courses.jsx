@@ -1,5 +1,5 @@
 import CourseCard from './CourseCard';
-import './Courses.css';
+import '../styles/Courses.css';
 import { useContext } from 'react';
 import { ThemeContext } from '../App';
 
