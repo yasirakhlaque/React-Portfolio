@@ -11,7 +11,42 @@
     font-size: 4rem;
     margin-bottom: 2vh;
     color: white;
+    display: inline-block;  /* Ensures it takes only the width of the text */
+    position: relative;
+    text-align: center;
 }
+
+.project-h1::after {
+    content: '';
+    background-color: #4d154d;
+    height: 2px;
+    width: 100%;  /* Makes it the same width as the text */
+    display: block;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0); /* Initially hide the line by scaling it to 0 */
+    transition: transform 0.9s ease, opacity 0.9s ease;
+    opacity: 0;
+}
+
+.project-h1:hover::after {
+    transform: translateX(-50%) scaleX(1); /* Unscale it on hover */
+    opacity: 1;
+}
+
+
+@keyframes load {
+    from {
+        transform: translateX(-1000px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 
 .project-cards {
     margin-top: 3vh;
