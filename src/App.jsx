@@ -9,7 +9,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import Heading from './components/Heading';
 
 // Create Theme Context
 export const ThemeContext = createContext();
@@ -59,7 +58,6 @@ const App = () => {
         </div>
       </div>
       <Footer />
-      <Heading />
     </ThemeContext.Provider>
   );
 };

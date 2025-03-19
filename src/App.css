@@ -10,14 +10,14 @@ body{
 
 /* Dark theme styles */
 .app.dark {
-  background: #121212; /* Dark background */
-  color: #ffffff; /* Light text */
+  background: #121212; 
+  color: #ffffff;
 }
 
 /* Light theme styles */
 .app.light {
-  background: linear-gradient(to bottom, #f5f5f5, #ffffff); /* Grey to white gradient */
-  color: #333333; /* Dark text */
+  background: linear-gradient(to bottom, #f5f5f5, #ffffff); 
+  color: #333333; 
 }
 
 /* Theme toggle button */
@@ -46,9 +46,9 @@ body{
   }
 }
 
-.theme-toggle i { /* Target the icon directly */
-  animation: none; /* Initially no animation */
-  transition: all .3s; /* Add transition to icon */
+.theme-toggle i {
+  animation: none; 
+  transition: all .3s; 
 }
 
 @keyframes roll {
@@ -58,4 +58,8 @@ body{
 
 .fa-sun{
   color: rgb(255, 115, 0);
+}
+
+*::selection{
+  color: rgb(200, 134, 253);
 }
