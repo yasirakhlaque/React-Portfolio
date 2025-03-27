@@ -1,100 +1,395 @@
+@import './themes.css';
+
 .project-card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 50vh;
-    width: 38vh;
-    background: linear-gradient(135deg, #C79FFF 0%, #8a3196 100%);
-    border-radius: 16px;
+    width: 320px;
+    background: linear-gradient(135deg, rgba(199, 159, 255, 0.85) 0%, rgba(138, 49, 150, 0.95) 100%);
+    border-radius: var(--border-radius-lg);
     text-align: center;
-    padding: 15px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-    transition: transform 0.3s ease-in-out;
+    padding: 30px 25px;
+    backdrop-filter: blur(12px);
+    box-shadow: var(--shadow);
+    transition: all var(--transition-medium) cubic-bezier(0.215, 0.610, 0.355, 1.000), 
+                background var(--transition-medium), 
+                color var(--transition-medium);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 1;
+    margin: 15px;
 }
 
-a{
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+    transform: rotate(30deg);
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.project-card::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, transparent 50%, transparent 100%);
+    border-radius: 24px;
+    z-index: -1;
+    opacity: 0.2;
+    transition: opacity 0.4s ease;
+}
+
+a {
     all: unset;
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-20px) scale(1.03);
+    box-shadow: var(--shadow-hover);
+}
+
+.project-card:hover::before {
+    opacity: 1;
+    animation: rotate 10s linear infinite;
+}
+
+.project-card:hover::after {
+    opacity: 0.5;
+}
+
+@keyframes rotate {
+    from { transform: rotate(30deg); }
+    to { transform: rotate(390deg); }
+}
+
+.project-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
 }
 
 .project-icon {
     background: rgba(255, 255, 255, 0.2);
-    height: 12vh;
-    width: 12vh;
+    height: 100px;
+    width: 100px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     font-size: 2.5rem;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: all .5s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
 
-    &:hover{
-        rotate: 360deg;
-    }
+.project-icon::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.5), transparent 50%);
+}
+
+.project-card:hover .project-icon {
+    transform: rotateY(360deg);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
 }
 
 .project-name {
     color: white;
-    font-weight: bold;
-    font-size: 1.5rem;
-    margin-top: 10px;
+    font-weight: 700;
+    font-size: 1.7rem;
+    margin-top: 5px;
+    position: relative;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+}
+
+.project-name::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 3px;
+    transition: width 0.4s ease, background 0.3s ease;
+}
+
+.project-card:hover .project-name::after {
+    width: 100px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .project-card-para {
     color: rgba(255, 255, 255, 0.9);
     font-size: 1rem;
-    padding: 0 10px;
+    padding: 0 5px;
+    line-height: 1.5;
+    font-weight: 400;
+    max-height: 90px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    transition: all var(--transition-fast);
+    min-height: 70px;
+}
+
+.project-card:hover .project-card-para {
+    color: white;
+}
+
+.options {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+    margin: 5px 0;
+    width: 100%;
+}
+
+.tech-badge {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 30px;
+    transition: all var(--transition-fast);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.project-card:hover .tech-badge {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
 .options .project-link-btn {
-    background: white;
+    background: rgba(255, 255, 255, 0.9);
     font-weight: bold;
-    color: #8a3196;
-    width: 16vh;
-    height: 5vh;
-    border-radius: 8px;
+    color: #8c0bd8;
+    width: 140px;
+    height: 45px;
+    border-radius: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.5vh;
+    gap: 8px;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    transition: all var(--transition-fast);
     border: none;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.options .project-link-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    transition: left 0.7s ease;
+    z-index: -1;
 }
 
 .options .project-link-btn:hover {
-    background: #3d3d3d;
-    color: white;
-    transform: scale(1.1);
+    background: white;
+    color: #a40efc;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
 }
+
+.options .project-link-btn:hover::before {
+    left: 100%;
+}
+
+.options .project-link-btn i {
+    transition: transform 0.3s ease;
+}
+
+.options .project-link-btn:hover i {
+    transform: translate(5px, -5px);
+}
+
+.project-card .github-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    z-index: 2;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-card .github-btn:hover {
+    transform: translateY(-5px) rotate(360deg);
+    background: white;
+    color: #a40efc;
+    box-shadow: 0 8px 20px rgba(164, 14, 252, 0.3);
+}
+
+/* Light theme adjustments */
 .project-card.light {
-    background: linear-gradient(135deg, #c4c4c4 0%, #9e9d9d 100%);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, rgba(244, 244, 244, 0.9) 0%, rgba(213, 213, 213, 0.95) 100%);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.project-card.light::before {
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.05) 0%, transparent 70%);
+}
+
+.project-card.light::after {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.05) 0%, transparent 50%, transparent 100%);
 }
 
 .project-card.light .project-icon {
-    background: rgba(0, 0, 0, 0.1);
-    color: black;
+    background: rgba(26, 14, 33, 0.1);
+    color: #1a0e21;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-.project-card.light .project-name,
+.project-card.light .project-icon::after {
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), transparent 50%);
+}
+
+.project-card.light:hover .project-icon {
+    background: rgba(26, 14, 33, 0.15);
+}
+
+.project-card.light .project-name {
+    color: #1a0e21;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-card.light .project-name::after {
+    background: rgba(26, 14, 33, 0.3);
+}
+
+.project-card.light:hover .project-name::after {
+    background: rgba(26, 14, 33, 0.5);
+    box-shadow: 0 0 8px rgba(26, 14, 33, 0.2);
+}
+
 .project-card.light .project-card-para {
-    color: black;
+    color: rgba(0, 0, 0, 0.7);
 }
 
-.project-card.light .project-link-btn {
-    background: black;
+.project-card.light:hover .project-card-para {
+    color: #1a0e21;
+}
+
+.project-card.light .tech-badge {
+    background: rgba(26, 14, 33, 0.1);
+    color: #1a0e21;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.project-card.light:hover .tech-badge {
+    background: rgba(26, 14, 33, 0.15);
+}
+
+.project-card.light .options .project-link-btn {
+    background: #1a0e21;
     color: white;
 }
 
-.project-card.light .project-link-btn:hover {
-    background: #949394;
-    color: rgb(0, 0, 0);
+.project-card.light .options .project-link-btn::before {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+}
+
+.project-card.light .options .project-link-btn:hover {
+    background: #333333;
+}
+
+.project-card.light .github-btn {
+    background: rgba(26, 14, 33, 0.1);
+    color: #1a0e21;
+}
+
+.project-card.light .github-btn:hover {
+    background: #1a0e21;
+    color: white;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .project-icon {
+        height: 80px;
+        width: 80px;
+        font-size: 2rem;
+    }
+
+    .project-name {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-card {
+        padding: 25px 20px;
+    }
+
+    .project-icon {
+        height: 70px;
+        width: 70px;
+        font-size: 1.8rem;
+    }
+
+    .project-name {
+        font-size: 1.3rem;
+    }
+
+    .project-card-para {
+        font-size: 0.9rem;
+    }
+
+    .options .project-link-btn {
+        width: 120px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
 }
