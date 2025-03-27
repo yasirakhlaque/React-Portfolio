@@ -5,5 +5,11 @@
 }
 
 ::-webkit-scrollbar{
-    display: none;
+    background-color: rgb(196, 138, 250);
+    width: 2vh;
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 12px;
+    background-color: rgb(245, 196, 250);
 }

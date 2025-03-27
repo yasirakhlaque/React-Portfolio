@@ -1,7 +1,6 @@
 import './App.css';
 import { useEffect, useState, createContext } from 'react';
 import About from './components/About';
-import Courses from './components/Courses';
 import LandingPage from './components/LandingPage';
 import Project from './components/Project';
 import Skills from './components/Skills';
@@ -9,6 +8,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Resume from './components/Resume';
 
 // Create Theme Context
 export const ThemeContext = createContext();
@@ -50,8 +50,8 @@ const App = () => {
         <div id="skills">
           <Skills />
         </div>
-        <div id="courses">
-          <Courses />
+        <div id="resume">
+          <Resume />
         </div>
         <div id="contact">
           <Contact />
