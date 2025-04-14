@@ -8,7 +8,7 @@ export default function About() {
     // Core skills to display based on resume
     const skills = [
         "React.js", "JavaScript", "HTML/CSS", "Node.js", 
-        "Responsive Design", "UI/UX", "Git", "APIs"
+        "Responsive Design", "UI/UX", "Git", "APIs", "MUI"
     ];
 
     return (

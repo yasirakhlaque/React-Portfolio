@@ -113,9 +113,9 @@ const LandingPage = () => {
         </div>
         
         <div className="social-links">
-          <a href="#" className="social-link"><i className="fab fa-github"></i></a>
-          <a href="#" className="social-link"><i className="fab fa-linkedin"></i></a>
-          <a href="#" className="social-link"><i className="fab fa-twitter"></i></a>
+          <a href="https://github.com/yasirakhlaque" className="social-link"><i className="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/yasirakhlaque" className="social-link"><i className="fab fa-linkedin"></i></a>
+          <a href="https://x.com/___Yas_bytes_" className="social-link"><i className="fab fa-twitter"></i></a>
         </div>
         
         <div className="scroll-indicator">
