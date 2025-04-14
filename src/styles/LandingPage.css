@@ -446,7 +446,7 @@
 
 .profile-container {
     position: absolute;
-    bottom: 0;
+    bottom: -75px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 3;
@@ -457,7 +457,7 @@
 }
 
 .profile-image {
-    height: 70vh;
+    height: 88vh;
     width: auto;
     z-index: 5;
     border-radius: 10px;

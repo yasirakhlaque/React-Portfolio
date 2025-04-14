@@ -106,7 +106,7 @@ const LandingPage = () => {
 
         <div className="profile-container">
           <div className="profile-image">
-            <img src="Images/yasir1.png" alt="Profile" />
+            <img src="Images/yasir5.png" alt="Profile" />
             <div className="image-overlay"></div>
           </div>
           <div className="profile-shadow"></div>
