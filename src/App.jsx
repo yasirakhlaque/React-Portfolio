@@ -14,7 +14,8 @@ import Resume from './components/Resume';
 export const ThemeContext = createContext();
 
 const App = () => {
-  const [theme, setTheme] = useState('dark'); // Default theme is dark
+  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark');
+ // Default theme is dark
 
   useEffect(() => {
     AOS.init();
@@ -22,15 +23,19 @@ const App = () => {
   }, []);
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
+  setTheme((prevTheme) => {
+    const newTheme = prevTheme === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('theme', newTheme);
+    return newTheme;
+  });
 
-    const icon = document.querySelector('.theme-toggle i'); // Select the icon
-    if (icon) {
-      icon.style.animation = 'none';
-      icon.offsetHeight; // Trigger reflow
-      icon.style.animation = 'roll 0.5s ease 1';
-    }
-  };
+  const icon = document.querySelector('.theme-toggle i');
+  if (icon) {
+    icon.style.animation = 'none';
+    icon.offsetHeight;
+    icon.style.animation = 'roll 0.5s ease 1';
+  }
+};
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
