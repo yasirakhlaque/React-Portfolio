@@ -21,7 +21,7 @@ export default function About() {
                     <h2>ABOUT ME</h2>
                     <h3>FRONTEND DEVELOPER</h3>
                     <p className='about-para'>
-                        Hey I am Yasir Akhlaque, a Frontend Developer skilled in building interactive and scalable web applications using React.js. Based in Nasirabad, Khandari, Agra, I'm passionate about open-source contributions and creating user-friendly interfaces. When I'm not collaborating with teams and integrating APIs, I'm exploring new technologies to enhance web development.
+                        Hey I am Yasir Akhlaque, a Frontend Developer skilled in building interactive and scalable web applications using React.js. I'm passionate about open-source contributions and creating user-friendly interfaces. When I'm not collaborating with teams and integrating APIs, I'm exploring new technologies to enhance web development.
                     </p>
                     
                     <div className="skills-badges">
