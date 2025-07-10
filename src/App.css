@@ -47,18 +47,35 @@ body{
   }
 }
 
-.theme-toggle i {
+.theme-toggle svg {
   animation: none; 
   transition: all .3s; 
 }
 
-@keyframes roll {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/* Add this to your App.css if it's not already there */
+.theme-toggle .icon-container {
+  display: inline-block;
+  transition: transform 0.3s ease;
 }
 
-.fa-sun{
+.theme-toggle .icon-container.rolling {
+  animation: roll 0.5s ease-in-out;
+}
+
+@keyframes roll {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.theme-toggle .sun{
   color: rgb(255, 115, 0);
+}
+.theme-toggle .moon{
+  color: rgb(37, 40, 54);
 }
 
 *::selection{

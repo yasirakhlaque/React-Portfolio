@@ -9,13 +9,16 @@ import 'aos/dist/aos.css';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Resume from './components/Resume';
+// React Icons imports
+import { FaSun, FaMoon } from 'react-icons/fa';
 
 // Create Theme Context
 export const ThemeContext = createContext();
 
 const App = () => {
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark');
- // Default theme is dark
+  const [isAnimating, setIsAnimating] = useState(false);
+  // Default theme is dark
 
   useEffect(() => {
     AOS.init();
@@ -23,25 +26,30 @@ const App = () => {
   }, []);
 
   const toggleTheme = () => {
-  setTheme((prevTheme) => {
-    const newTheme = prevTheme === 'dark' ? 'light' : 'dark';
-    localStorage.setItem('theme', newTheme);
-    return newTheme;
-  });
-
-  const icon = document.querySelector('.theme-toggle i');
-  if (icon) {
-    icon.style.animation = 'none';
-    icon.offsetHeight;
-    icon.style.animation = 'roll 0.5s ease 1';
-  }
-};
+    setIsAnimating(true);
+    
+    // Start the animation first
+    setTimeout(() => {
+      setTheme((prevTheme) => {
+        const newTheme = prevTheme === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('theme', newTheme);
+        return newTheme;
+      });
+    }, 250); // Change theme halfway through animation
+    
+    // End animation after it completes
+    setTimeout(() => {
+      setIsAnimating(false);
+    }, 500);
+  };
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <div className={`app ${theme}`}>
         <button className="theme-toggle" onClick={toggleTheme}>
-          {theme === 'dark' ? <i className="fa-solid fa-sun"></i> : <i className="fa-solid fa-moon"></i>}
+          <div className={`icon-container ${isAnimating ? 'rolling' : ''}`}>
+            {theme === 'dark' ? <FaSun className='sun'/> : <FaMoon className='moon'/>}
+          </div>
         </button>
         <div id="home">
           <LandingPage />
