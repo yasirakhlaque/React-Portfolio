@@ -1,10 +1,14 @@
 import '../styles/Resume.css';
 import { useContext } from 'react';
 import { ThemeContext } from '../App';
+// React Icons imports
+import {
+    FaBriefcase, FaGraduationCap, FaCertificate, FaRobot, FaChalkboardTeacher, FaTrophy, FaAward, FaHandsHelping, FaMedal, FaUsers, FaCodeBranch, FaLink, FaDownload
+} from 'react-icons/fa';
 
 export default function Resume() {
     const { theme } = useContext(ThemeContext);
-    
+
     const experiences = [
         {
             title: "SOCIAL WINTER OF CODE CONTRIBUTOR",
@@ -14,7 +18,7 @@ export default function Resume() {
                 "Worked on frontend optimization and UI improvements."
             ],
             link: "https://certificate.givemycertificate.com/c/6d35c046-b285-42c7-93a2-bd28e0e0e141",
-            icon: "fa-solid fa-code-branch"
+            icon: FaCodeBranch
         },
         {
             title: "VOLUNTEER IN THE GEN AI CAMPAIGN",
@@ -24,7 +28,7 @@ export default function Resume() {
                 "Provided learning resources and technical guidance."
             ],
             link: "https://verification.givemycertificate.com/v/73592c61-a9d3-48fc-b6ad-7acb870bbfc6",
-            icon: "fa-solid fa-robot"
+            icon: FaRobot
         },
         {
             title: "Web Development Bootcamp Volunteer & Speaker",
@@ -35,44 +39,48 @@ export default function Resume() {
                 "Guided participants on best practices in frontend development."
             ],
             link: "#",
-            icon: "fa-solid fa-chalkboard-teacher"
+            icon: FaChalkboardTeacher
         }
     ];
-    
+
     const achievements = [
         {
             title: "Selected among top 16 participants in TalentHunt@IET competition.",
-            icon: "fa-solid fa-trophy"
+            icon: FaTrophy
         },
         {
             title: "Led team to selection in the internal hackathon of Smart India Hackathon (SIH).",
-            icon: "fa-solid fa-users"
+            icon: FaUsers
         },
         {
             title: "Finished in top 5 of GDG IGC campus Gen AI campaign completions.",
-            icon: "fa-solid fa-award"
+            icon: FaAward
         },
         {
             title: "Active volunteer in Gen AI study jam (GDG IGC campus).",
-            icon: "fa-solid fa-hands-helping"
+            icon: FaHandsHelping
         },
         {
             title: "Finished at 19 rank in Social Winter of Code among 3000+ Participants.",
-            icon: "fa-solid fa-medal"
-        }
+            icon: FaMedal
+        },
+        {
+            title: "Participant in HackByte 3.0, contributed as Frontend Developer on a MERN stack project.",
+            icon: FaMedal
+        },
     ];
-    
+
     const certifications = [
         {
             title: "Prompt Engineering for ChatGPT",
             provider: "Great Learning"
         },
         {
-            title: "Front-end for Beginners",
-            provider: "Sololearn"
+            title: "Human Computer Interaction (In English)",
+            provider: "NPTEL"
         },
         {
-            title: "Introduction to Javascript",
+            title: "Javascript Intermediate",
             provider: "Sololearn"
         },
         {
@@ -81,23 +89,23 @@ export default function Resume() {
             provider: "TCS iON"
         }
     ];
-    
+
     return (
         <div className={`resume ${theme}`} id="resume">
             <h1 className="resume-title" data-aos="fade-down">RESUME</h1>
-            
+
             <div className="resume-container">
                 <div className="resume-section experience-section" data-aos="fade-up">
                     <h2 className="section-title">
-                        <i className="fa-solid fa-briefcase"></i>
+                        <FaBriefcase />
                         EXPERIENCE
                     </h2>
-                    
+
                     <div className="timeline">
                         {experiences.map((exp, index) => (
                             <div className="timeline-item" key={index} data-aos="fade-up" data-aos-delay={index * 100}>
                                 <div className="timeline-icon">
-                                    <i className={exp.icon}></i>
+                                    <exp.icon />
                                 </div>
                                 <div className="timeline-content">
                                     <div className="timeline-header">
@@ -111,7 +119,7 @@ export default function Resume() {
                                     </ul>
                                     {exp.link && (
                                         <a href={exp.link} className="timeline-link" target="_blank" rel="noopener noreferrer">
-                                            <i className="fa-solid fa-link"></i> Link
+                                            <FaLink /> Link
                                         </a>
                                     )}
                                 </div>
@@ -119,18 +127,18 @@ export default function Resume() {
                         ))}
                     </div>
                 </div>
-                
+
                 <div className="resume-section achievements-section" data-aos="fade-up">
                     <h2 className="section-title">
-                        <i className="fa-solid fa-trophy"></i>
+                        <FaTrophy />
                         KEY ACHIEVEMENTS
                     </h2>
-                    
+
                     <div className="achievements-list">
                         {achievements.map((achievement, index) => (
                             <div className="achievement-item" key={index} data-aos="fade-up" data-aos-delay={index * 100}>
                                 <div className="achievement-icon">
-                                    <i className={achievement.icon}></i>
+                                    <achievement.icon />
                                 </div>
                                 <div className="achievement-content">
                                     <p>{achievement.title}</p>
@@ -139,13 +147,13 @@ export default function Resume() {
                         ))}
                     </div>
                 </div>
-                
+
                 <div className="resume-section education-section" data-aos="fade-up">
                     <h2 className="section-title">
-                        <i className="fa-solid fa-graduation-cap"></i>
+                        <FaGraduationCap />
                         EDUCATION
                     </h2>
-                    
+
                     <div className="education-content">
                         <div className="education-item" data-aos="fade-up">
                             <h3>Associate's Degree in Computer Science Engineering</h3>
@@ -156,13 +164,13 @@ export default function Resume() {
                         </div>
                     </div>
                 </div>
-                
+
                 <div className="resume-section certifications-section" data-aos="fade-up">
                     <h2 className="section-title">
-                        <i className="fa-solid fa-certificate"></i>
+                        <FaCertificate />
                         CERTIFICATION
                     </h2>
-                    
+
                     <div className="certifications-list">
                         {certifications.map((cert, index) => (
                             <div className="certification-item" key={index} data-aos="fade-up" data-aos-delay={index * 100}>
@@ -176,11 +184,11 @@ export default function Resume() {
                     </div>
                 </div>
             </div>
-            
+
             <div className="resume-cta">
                 <a href="/resume.pdf" download="YasirAkhlaque_Resume.pdf">
                     <button className="resume-download-btn">
-                        <i className="fa-solid fa-download"></i>
+                        <FaDownload />
                         Download Full Resume
                     </button>
                 </a>

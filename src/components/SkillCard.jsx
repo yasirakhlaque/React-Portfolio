@@ -2,17 +2,17 @@ import '../styles/SkillCard.css';
 import { useContext } from 'react';
 import { ThemeContext } from '../App';
 
-export default function SkillCard({ icon, name, ...props }) {
+export default function SkillCard({ icon: IconComponent, name, ...props }) {
     const { theme } = useContext(ThemeContext);
-    
+
     return (
-        <div 
-            className={`skill-card ${theme}`} 
+        <div
+            className={`skill-card ${theme}`}
             data-aos="flip-left"
             data-aos-duration="800"
         >
             <div className="icon">
-                <i className={`${icon}`}></i>
+                <IconComponent size={48} className="icon"/>
                 <div className="skill-name">{name}</div>
             </div>
         </div>
