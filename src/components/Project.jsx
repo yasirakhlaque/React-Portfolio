@@ -2,6 +2,8 @@ import '../styles/Project.css'
 import ProjectCard from './ProjectCard'
 import { useContext, useState, useRef, useEffect } from 'react';
 import { ThemeContext } from '../App';
+// React Icons imports
+import { FaReact, FaRobot, FaUser, FaChevronDown } from 'react-icons/fa';
 
 export default function Project() {
     const { theme } = useContext(ThemeContext);
@@ -25,7 +27,7 @@ export default function Project() {
 
     const projects = [
         {
-            icon: "fa-brands fa-react",
+            icon: FaReact,
             name: "React E-Commerce",
             about: "Developed a fully functional e-commerce platform using React.js with features like cart management, dynamic UI, and state management using Context API and reducers.",
             link: "https://react-e-commerce-kappa-six.vercel.app/",
@@ -33,7 +35,7 @@ export default function Project() {
             technologies: ["React.js", "Context API", "Dynamic UI"]
         },
         {
-            icon: "fa-solid fa-robot",
+            icon: FaRobot,
             name: "Doraemon Bot",
             about: "Built a Doraemon-themed chatbot using React.js and Gemini API with an engaging UI for interactive conversations and responsive design for cross-device compatibility.",
             link: "https://doraemon-bot.vercel.app/",
@@ -41,7 +43,7 @@ export default function Project() {
             technologies: ["React.js", "GeminiAPI", "Responsive Design"]
         },
         {
-            icon: "fa-solid fa-user",
+            icon: FaUser,
             name: "Personal Portfolio",
             about: "Developed a fully responsive portfolio using React.js with AOS (Animate On Scroll) library for better UX and user-friendly interface to showcase skills and projects.",
             link: "#",
@@ -121,7 +123,7 @@ export default function Project() {
             <div className="scroll-more">
                 <span>Scroll for more</span>
                 <div className="scroll-arrow">
-                    <i className="fa-solid fa-chevron-down"></i>
+                    <FaChevronDown />
                 </div>
             </div>
             

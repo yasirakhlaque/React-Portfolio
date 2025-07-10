@@ -1,6 +1,9 @@
 import '../styles/LandingPage.css';
 import { useContext, useEffect, useState, useRef } from 'react';
 import { ThemeContext } from '../App';
+// React Icons imports
+import { FaGithub, FaLinkedin, FaChevronDown } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const LandingPage = () => {
   const { theme } = useContext(ThemeContext);
@@ -113,14 +116,14 @@ const LandingPage = () => {
         </div>
         
         <div className="social-links">
-          <a href="https://github.com/yasirakhlaque" className="social-link"><i className="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/yasirakhlaque" className="social-link"><i className="fab fa-linkedin"></i></a>
-          <a href="https://x.com/___Yas_bytes_" className="social-link"><i className="fab fa-twitter"></i></a>
+          <a href="https://github.com/yasirakhlaque" className="social-link"><FaGithub /></a>
+          <a href="https://www.linkedin.com/in/yasirakhlaque" className="social-link"><FaLinkedin /></a>
+          <a href="https://x.com/___Yas_bytes_" className="social-link"><FaXTwitter /></a>
         </div>
         
         <div className="scroll-indicator">
           <span>Scroll Down</span>
-          <i className="fas fa-chevron-down"></i>
+          <FaChevronDown />
         </div>
       </div>
     </div>

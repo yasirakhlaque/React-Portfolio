@@ -1,6 +1,8 @@
 import '../styles/About.css'
 import { useContext } from 'react';
 import { ThemeContext } from '../App';
+// React Icons imports
+import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 
 export default function About() {
     const { theme } = useContext(ThemeContext);
@@ -32,13 +34,13 @@ export default function About() {
                     
                     <div className="about-social">
                         <a href="https://www.linkedin.com/in/yasirakhlaque" target="_blank" rel="noopener noreferrer">
-                            <i className="fa-brands fa-linkedin"></i>
+                            <FaLinkedin />
                         </a>
                         <a href="https://github.com/yasirakhlaque" target="_blank" rel="noopener noreferrer">
-                            <i className="fa-brands fa-github"></i>
+                            <FaGithub />
                         </a>
                         <a href="mailto:akhlaqueyasir28@gmail.com">
-                            <i className="fa-solid fa-envelope"></i>
+                            <FaEnvelope />
                         </a>
                     </div>
                     

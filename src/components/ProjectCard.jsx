@@ -1,8 +1,10 @@
 import "../styles/ProjectCard.css";
 import { useContext } from "react";
 import { ThemeContext } from "../App";
+// React Icons imports
+import { FaGithub, FaArrowUpRightFromSquare } from 'react-icons/fa6';
 
-export default function ProjectCard({ icon, name, about, technologies, link, github, ...props }) {
+export default function ProjectCard({ icon: IconComponent, name, about, technologies, link, github, ...props }) {
     const { theme } = useContext(ThemeContext);
     
     return (
@@ -12,7 +14,7 @@ export default function ProjectCard({ icon, name, about, technologies, link, git
             data-aos-duration="800"
         >
             <div className="project-content">
-                <div className="project-icon"><i className={`${icon}`}></i></div>
+                <div className="project-icon"><IconComponent /></div>
                 <div className="project-name">{name}</div>
                 <p className="project-card-para">{about}</p>
                 
@@ -27,7 +29,7 @@ export default function ProjectCard({ icon, name, about, technologies, link, git
             
             {github && (
                 <a href={github} target="_blank" rel="noopener noreferrer" className="github-btn" title="View Code on GitHub">
-                    <i className="fa-brands fa-github"></i>
+                    <FaGithub />
                 </a>
             )}
             
@@ -35,7 +37,7 @@ export default function ProjectCard({ icon, name, about, technologies, link, git
                 <a href={link} target="_blank" rel="noopener noreferrer">
                     <button className="project-link-btn">
                         Visit 
-                        <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                        <FaArrowUpRightFromSquare />
                     </button>
                 </a>
             </div>

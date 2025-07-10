@@ -1,6 +1,9 @@
 import '../styles/Contact.css'
 import { useContext } from 'react';
 import { ThemeContext } from '../App';
+// React Icons imports
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 
 export default function Contact() {
     const { theme, toggleTheme } = useContext(ThemeContext);
@@ -25,9 +28,9 @@ export default function Contact() {
                     <button type="submit">Submit</button>
                 </form>
                 <div className="social">
-                    <a href="https://www.linkedin.com/in/yasir-akhlaque-9a896b302/"><i className="fa-brands fa-linkedin"></i></a>
-                    <a href="https://x.com/___Yas_bytes_"><i className="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://github.com/yasirakhlaque"><i className="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/yasir-akhlaque-9a896b302/"><FaLinkedin /></a>
+                    <a href="https://x.com/___Yas_bytes_"><FaXTwitter /></a>
+                    <a href="https://github.com/yasirakhlaque"><FaGithub /></a>
                 </div>
             </div>
         </>
