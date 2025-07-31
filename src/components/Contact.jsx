@@ -1,12 +1,11 @@
 import '../styles/Contact.css'
 import { useContext } from 'react';
 import { ThemeContext } from '../App';
-// React Icons imports
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 
 export default function Contact() {
-    const { theme, toggleTheme } = useContext(ThemeContext);
+    const { theme} = useContext(ThemeContext);
     return (
         <>
             <div className={`contact ${theme}`}>

@@ -1,7 +1,6 @@
 import '../styles/LandingPage.css';
 import { useContext, useEffect, useState, useRef } from 'react';
 import { ThemeContext } from '../App';
-// React Icons imports
 import { FaGithub, FaLinkedin, FaChevronDown } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 
@@ -12,7 +11,6 @@ const LandingPage = () => {
   const navbarRef = useRef(null);
   
   useEffect(() => {
-    // Set client-side flag for SSR compatibility
     setIsClient(true);
     
     // Handle clicks outside the navbar to close mobile menu
@@ -43,24 +41,7 @@ const LandingPage = () => {
   };
 
   return (
-    <div className={`landing-page ${theme}`}>
-      <div className="animated-background">
-        <div className="particle-container">
-          {[...Array(15)].map((_, index) => (
-            <div 
-              key={index} 
-              className="particle"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${Math.random() * 10 + 10}s`
-              }}
-            />
-          ))}
-        </div>
-      </div>
-      
+    <div className={`landing-page ${theme}`}>      
       {isClient && (
         <>
           <button 

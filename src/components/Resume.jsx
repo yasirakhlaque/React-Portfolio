@@ -1,7 +1,6 @@
 import '../styles/Resume.css';
 import { useContext } from 'react';
 import { ThemeContext } from '../App';
-// React Icons imports
 import {
     FaBriefcase, FaGraduationCap, FaCertificate, FaRobot, FaChalkboardTeacher, FaTrophy, FaAward, FaHandsHelping, FaMedal, FaUsers, FaCodeBranch, FaLink, FaDownload
 } from 'react-icons/fa';

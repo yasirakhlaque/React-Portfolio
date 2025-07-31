@@ -2,28 +2,11 @@ import '../styles/Project.css'
 import ProjectCard from './ProjectCard'
 import { useContext, useState, useRef, useEffect } from 'react';
 import { ThemeContext } from '../App';
-// React Icons imports
 import { FaReact, FaRobot, FaUser, FaChevronDown } from 'react-icons/fa';
 
 export default function Project() {
     const { theme } = useContext(ThemeContext);
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [activeIndex, setActiveIndex] = useState(null);
-    const containerRef = useRef(null);
-    
-    useEffect(() => {
-        const handleMouseMove = (e) => {
-            if (containerRef.current) {
-                const { left, top, width, height } = containerRef.current.getBoundingClientRect();
-                const x = ((e.clientX - left) / width) - 0.5;
-                const y = ((e.clientY - top) / height) - 0.5;
-                setMousePosition({ x, y });
-            }
-        };
-        
-        window.addEventListener('mousemove', handleMouseMove);
-        return () => window.removeEventListener('mousemove', handleMouseMove);
-    }, []);
 
     const projects = [
         {
@@ -53,43 +36,22 @@ export default function Project() {
     ];
 
     return (
-        <div 
-            className={`project ${theme}`} 
+        <div
+            className={`project ${theme}`}
             id="projects"
-            ref={containerRef}
-            style={{
-                backgroundPosition: `${50 + mousePosition.x * 10}% ${50 + mousePosition.y * 10}%`
-            }}
         >
-            <div className="project-particles">
-                {[...Array(10)].map((_, index) => (
-                    <div 
-                        key={index}
-                        className="project-particle"
-                        style={{
-                            left: `${Math.random() * 100}%`,
-                            top: `${Math.random() * 100}%`,
-                            width: `${Math.random() * 6 + 2}px`,
-                            height: `${Math.random() * 6 + 2}px`,
-                            animationDuration: `${Math.random() * 20 + 10}s`,
-                            animationDelay: `${Math.random() * 5}s`
-                        }}
-                    />
-                ))}
-            </div>
-            
-            <h1 
-                className="project-h1" 
+            <h1
+                className="project-h1"
                 data-aos="fade-down"
                 data-aos-duration="800"
             >
                 PROJECTS
                 <span className="project-h1-highlight"></span>
             </h1>
-            
+
             <div className="project-cards">
                 {projects.map((project, index) => (
-                    <div 
+                    <div
                         key={index}
                         className="project-card-wrapper"
                         onMouseEnter={() => setActiveIndex(index)}
@@ -102,33 +64,24 @@ export default function Project() {
                         data-aos-delay={index * 100}
                         data-aos-duration="800"
                     >
-                        <ProjectCard 
-                            icon={project.icon} 
-                            name={project.name} 
+                        <ProjectCard
+                            icon={project.icon}
+                            name={project.name}
                             about={project.about}
                             technologies={project.technologies}
                             link={project.link}
                             github={project.github}
                         />
-                        <div 
-                            className={`card-spotlight ${activeIndex === index ? 'active' : ''}`}
-                            style={{
-                                background: `radial-gradient(circle at ${mousePosition.x * 100 + 50}% ${mousePosition.y * 100 + 50}%, var(--accent-primary-transparent), transparent 70%)`
-                            }}
-                        />
                     </div>
                 ))}
             </div>
-            
+
             <div className="scroll-more">
                 <span>Scroll for more</span>
                 <div className="scroll-arrow">
                     <FaChevronDown />
                 </div>
             </div>
-            
-            <div className="project-circle"></div>
-            <div className="project-circle circle-2"></div>
         </div>
     );
 }

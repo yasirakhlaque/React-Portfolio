@@ -12,9 +12,9 @@
     padding: 30px 25px;
     backdrop-filter: blur(12px);
     box-shadow: var(--shadow);
-    transition: all var(--transition-medium) cubic-bezier(0.215, 0.610, 0.355, 1.000), 
-                background var(--transition-medium), 
-                color var(--transition-medium);
+    transition: all var(--transition-medium) cubic-bezier(0.215, 0.610, 0.355, 1.000),
+        background var(--transition-medium),
+        color var(--transition-medium);
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -66,8 +66,13 @@ a {
 }
 
 @keyframes rotate {
-    from { transform: rotate(30deg); }
-    to { transform: rotate(390deg); }
+    from {
+        transform: rotate(30deg);
+    }
+
+    to {
+        transform: rotate(390deg);
+    }
 }
 
 .project-content {
@@ -392,4 +397,16 @@ a {
         height: 40px;
         font-size: 0.9rem;
     }
+}
+
+
+/* Project Details Styles  */
+.project-details {
+    position: absolute;
+    top: 5px;
+    height: 90vh;
+    width: 95vw;
+    background: linear-gradient(135deg, rgba(199, 159, 255, 0.85) 0%, rgba(138, 49, 150, 0.95) 100%);
+    border-radius: 12px;
+    padding: 20px;
 }

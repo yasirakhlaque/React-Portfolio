@@ -1,7 +1,6 @@
 import '../styles/About.css'
 import { useContext } from 'react';
 import { ThemeContext } from '../App';
-// React Icons imports
 import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 
 export default function About() {
