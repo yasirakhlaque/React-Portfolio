@@ -118,7 +118,7 @@ a {
     color: white;
     font-weight: 700;
     font-size: 1.7rem;
-    margin-top: 5px;
+    margin: 5px 0 15px 0;
     position: relative;
     text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     letter-spacing: 1px;
@@ -399,14 +399,335 @@ a {
     }
 }
 
+/* Project Details Modal Overlay */
+.project-details-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+}
 
-/* Project Details Styles  */
-.project-details {
-    position: absolute;
-    top: 5px;
-    height: 90vh;
-    width: 95vw;
-    background: linear-gradient(135deg, rgba(199, 159, 255, 0.85) 0%, rgba(138, 49, 150, 0.95) 100%);
-    border-radius: 12px;
+.project-details-overlay.light {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Modal Container */
+.project-details-modal {
+  background: #1a1a1a;
+  border-radius: 20px;
+  max-width: 1000px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  border: 1px solid #333;
+  position: relative;
+}
+
+.project-details-modal.light {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* Header */
+.project-details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  border-bottom: 1px solid #333;
+  position: sticky;
+  top: 0;
+  background: inherit;
+  z-index: 10;
+}
+
+.project-details-modal.light .project-details-header {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.project-details-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.project-details-icon {
+  font-size: 28px;
+  color: #c960fa;
+}
+
+.project-details-title h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.project-details-modal.light .project-details-title h2 {
+  color: #1a1a1a;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #a1a1aa;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  background: #333;
+  color: #ffffff;
+}
+
+.project-details-modal.light .close-btn {
+  color: #6b7280;
+}
+
+.project-details-modal.light .close-btn:hover {
+  background: #f3f4f6;
+  color: #1a1a1a;
+}
+
+/* Content Layout */
+.project-details-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  padding: 24px;
+}
+
+/* Image Section */
+.project-image-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-image-container {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #333;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.project-details-modal.light .project-image-container {
+  background: #f8fafc;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 16/10;
+  transition: transform 0.3s ease;
+}
+
+.project-image:hover {
+  transform: scale(1.02);
+}
+
+/* Info Section */
+.project-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.project-description h3,
+.project-tech-section h3 {
+  margin: 0 0 12px 0;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.project-details-modal.light .project-description h3,
+.project-details-modal.light .project-tech-section h3 {
+  color: #1a1a1a;
+}
+
+.project-description p {
+  margin: 0;
+  color: #d1d5db;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.project-details-modal.light .project-description p {
+  color: #4b5563;
+}
+
+/* Technology Badges */
+.tech-badges-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-badge-detailed {
+  background: linear-gradient(135deg, #e060fa 0%, #ca3bf6 100%);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+}
+
+.project-details-modal.light .tech-badge-detailed {
+  background: linear-gradient(135deg, #202020 0%, #091431 100%);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* Action Buttons */
+.project-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: auto;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.action-btn.primary {
+  background: linear-gradient(135deg, #c712f5 0%, #cf13f5 100%);
+  color: white;
+}
+
+.action-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(96, 165, 250, 0.4);
+}
+
+.action-btn.secondary {
+  background: transparent;
+  color: #a1a1aa;
+  border: 2px solid #333;
+}
+
+.action-btn.secondary:hover {
+  background: #333;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.project-details-modal.light .action-btn.secondary {
+  color: #6b7280;
+  border: 2px solid #e5e7eb;
+}
+
+.project-details-modal.light .action-btn.secondary:hover {
+  background: #f3f4f6;
+  color: #1a1a1a;
+  border-color: #d1d5db;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .project-details-overlay {
+    padding: 16px;
+  }
+  
+  .project-details-modal {
+    max-height: 95vh;
+  }
+  
+  .project-details-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
     padding: 20px;
+  }
+  
+  .project-details-header {
+    padding: 20px;
+  }
+  
+  .project-details-title h2 {
+    font-size: 20px;
+  }
+  
+  .project-actions {
+    flex-direction: column;
+  }
+  
+  .action-btn {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-details-overlay {
+    padding: 12px;
+  }
+  
+  .project-details-content {
+    padding: 16px;
+  }
+  
+  .project-details-header {
+    padding: 16px;
+  }
+  
+  .project-details-title {
+    gap: 12px;
+  }
+  
+  .project-details-icon {
+    font-size: 24px;
+  }
+  
+  .project-details-title h2 {
+    font-size: 18px;
+  }
+}
+
+/* Scrollbar Styling */
+.project-details-modal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.project-details-modal::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.project-details-modal::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+.project-details-modal.light::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+.project-details-modal.light::-webkit-scrollbar-thumb {
+  background: #e5e7eb;
 }
